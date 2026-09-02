@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Yasmin 💙</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #071a3d, #0b3d91, #071a3d);
+      color: white;
+      text-align: center;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin: 15px 0;
+    }
+
+    h2 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .flores {
+      font-size: 35px;
+      margin: 15px;
+    }
+
+    .foto {
+      width: 90%;
+      max-width: 380px;
+      border-radius: 25px;
+      margin: 25px 0;
+      box-shadow: 0 10px 35px rgba(0,0,0,.5);
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 30px;
+      background: white;
+      color: #0750a0;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    .contador {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 25px 0;
+    }
+
+    .tempo {
+      background: rgba(255,255,255,.15);
+      padding: 18px;
+      border-radius: 15px;
+      min-width: 75px;
+    }
+
+    .numero {
+      display: block;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .mensagem {
+      background: rgba(255,255,255,.10);
+      padding: 30px 20px;
+      border-radius: 25px;
+      max-width: 650px;
+    }
+
+    footer {
+      padding: 30px;
+      background: #06142e;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section>
+    <div class="flores">✿ 💙 ✿</div>
+
+    <h2>Para você, Yasmin</h2>
+
+    <h1>Para a dona dos meus olhos favoritos.</h1>
+
+    <img src="foto.png" class="foto" alt="Nós dois">
+
+    <a href="#contador" class="botao">Continuar ❤️</a>
+  </section>
+
+
+  <section id="contador">
+    <div class="flores">💙 ✿ 💙</div>
+
+    <h2>Desde 07 de fevereiro de 2026</h2>
+
+    <div class="contador">
+      <div class="tempo">
+        <span class="numero" id="dias">0</span>
+        dias
+      </div>
+
+      <div class="tempo">
+        <span class="numero" id="horas">0</span>
+        horas
+      </div>
+
+      <div class="tempo">
+        <span class="numero" id="minutos">0</span>
+        minutos
+      </div>
+
+      <div class="tempo">
+        <span class="numero" id="segundos">0</span>
+        segundos
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="flores">🌸 💙 🌸</div>
+
+    <div class="mensagem">
+      <p>
+        Desde esse dia que está no cronômetro, eu sabia que um dia eu iria ser seu.
+      </p>
+
+      <p>
+        Tudo em mim melhora quando você está perto.
+      </p>
+
+      <p>
+        Seu abraço me acalma.<br>
+        Seu sorriso me distrai.<br>
+        E sua voz me faz um bem que só eu sei o quanto é bom.
+      </p>
+
+      <p>
+        Por isso eu vim fazer isso, essa dedicatória pra você, porque eu te amo.
+      </p>
+
+      <p>
+        O seu amor da minha vida.<br>
+        E a melhor pessoa que eu conheci.
+      </p>
+
+      <p>
+        Obrigado por estar presente no meu dia a dia.
+      </p>
+
+      <p>
+        Eu te amo demais, minha garota dos olhos verdes. ❤️
+      </p>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="flores">💙 ✿ 💙</div>
+
+    <h2>Nossa música 🎵</h2>
+
+    <p>Uma música que me lembra você.</p>
+
+    <button class="botao" onclick="tocarMusica()">
+      ▶️ Tocar nossa música
+    </button>
+
+    <audio id="musica" src="nossa-musica.opus"></audio>
+  </section>
+
+
+  <footer>
+    Feito com carinho para Yasmin 💙
+  </footer>
+
+
+  <script>
+    const inicio = new Date("2026-02-07T00:00:00-03:00");
+
+    function atualizarContador() {
+      const agora = new Date();
+      let diferenca = agora - inicio;
+
+      const dias = Math.floor(diferenca / 86400000);
+      diferenca %= 86400000;
+
+      const horas = Math.floor(diferenca / 3600000);
+      diferenca %= 3600000;
+
+      const minutos = Math.floor(diferenca / 60000);
+      diferenca %= 60000;
+
+      const segundos = Math.floor(diferenca / 1000);
+
+      document.getElementById("dias").textContent = dias;
+      document.getElementById("horas").textContent = horas;
+      document.getElementById("minutos").textContent = minutos;
+      document.getElementById("segundos").textContent = segundos;
+    }
+
+    atualizarContador();
+    setInterval(atualizarContador, 1000);
+
+    function tocarMusica() {
+      const musica = document.getElementById("musica");
+
+      if (musica.paused) {
+        musica.play();
+      } else {
+        musica.pause();
+      }
+    }
+  </script>
+
+</body>
+</html>
